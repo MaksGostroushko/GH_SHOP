@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  root 'products#index'
 
-  root 'static_pages#main'
+  resources :products
 
   get 'payment',  to: 'static_pages#payment'
   get 'delivery', to: 'static_pages#delivery'
