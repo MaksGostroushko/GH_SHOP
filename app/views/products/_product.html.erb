@@ -1,6 +1,8 @@
 <article class="product">
   <section class="post-head">
+    <%= image_tag product.picture.url(:thumb) if product.picture? %>
     <h2><%= link_to product.title, product_path(product) %></h2>
+    <h2><%= number_to_currency( product.price, precision: 0 ) %></h2>
   </section>
 
   <section class="post-description">
