@@ -10,7 +10,26 @@
   </head>
 
   <body>
-    <%= link_to "New item", new_product_path %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <%= image_tag ("gloves.png"), class: 'logo' %>
+      <%= link_to "Home", root_path, class: 'navbar-brand' %>
+      <%= link_to "Payment", payment_path, class: 'navbar-brand' %>
+      <%= link_to "Delivery", delivery_path, class: 'navbar-brand' %>
+      <%= link_to "Info", info_path, class: 'navbar-brand' %>
+      <%= link_to "New item", new_product_path, class: 'navbar-brand' %>
+        <form class="form-inline my-2 my-lg-0 search_form">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <table class="table_contact">
+          <tr>
+            <th>+380961843222</th>
+          </tr>
+          <tr>
+            <th>boxing@gmail.com</th>
+          </tr>
+    </table>
+    </nav>
 
     <%= yield %>
   </body>
