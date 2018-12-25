@@ -15,6 +15,34 @@
    margin-left: auto;
  }
 
+ .product_title {
+   text-align: center;
+ }
+
  .table_category {
    padding-top: 20px;
+   margin-left: 30px;
  }
+
+.product_grid {
+  // margin-left: 10px;
+  // padding: 50px;
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  margin: 5px;
+  height: 20px;
+  width: 30%;
+  margin-bottom: 120px;
+  margin-right: auto;
+  margin-left: 35px;
+}
+
+.main {
+  margin-top: 10px;
+}

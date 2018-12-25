@@ -1,5 +1,5 @@
-<h1>Products</h1>
-
+<h1 class="product_title">Boxers</h1>
+<div class="row main">
   <div class="col-md-2 table_category">
     <h3>Categories</h3>
     <table class="table table-bordered">
@@ -22,5 +22,7 @@
       </tbody>
     </table>
   </div>
-
-  <%= render @products %>
+  <div class="col-md-10 row product_grid">
+    <%= render @products %>
+  </div>
+</div>
