@@ -17,10 +17,21 @@
       <%= link_to "Delivery", delivery_path, class: 'navbar-brand' %>
       <%= link_to "Info", info_path, class: 'navbar-brand' %>
       <%= link_to "New item", new_product_path, class: 'navbar-brand' %>
-        <form class="form-inline my-2 my-lg-0 search_form">
+        <!-- <form class="form-inline my-2 my-lg-0 search_form">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form> -->
+    <div class="row">
+      <%= form_tag products_path, method: :get, class: "form-inline my-2 my-lg-0 search_form", id: "search-form" do %>
+        <%= text_field_tag(
+            :search,
+            params[:search],
+            placeholder: "Search",
+            class: "form-control mr-sm-2"
+        ) %>
+        <%= submit_tag "Search", class: 'btn btn-outline-success my-2 my-sm-0' %>
+      <% end %>
+    </div>
         <table class="table_contact">
           <tr>
             <th>+380961843222</th>
