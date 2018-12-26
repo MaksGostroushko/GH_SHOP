@@ -1,13 +1,17 @@
 <div class="row">
 
-  <div class="col-md-4">
-    <%= render 'carousel' %>
-  </div>
+  <!-- <div class="col-md-4">
+    <%# render 'carousel' %>
+  </div> -->
 
   <div class="show_product col-md-8">
-    <div>
-      <%= image_tag ( @product.picture.url if @product.picture? ), class: 'product_image' %>
-    </div>
+    <!-- <div> -->
+      <%#image_tag ( @product.picture.url if @product.picture? ), class: 'product_image' %>
+    <!-- </div> -->
+    <%= image_tag (@product.pictures[0].url(:large) if @product.pictures), id: "myImg" %>
+    <% @product.pictures.each do |i| %>
+        <%= image_tag i.url(:thumb) %>
+    <% end %>
     <h1><%= @product.title %></h1>
     <h2><%= number_to_currency( @product.price, precision: 0 ) %></h2>
     <p><%= @product.result %></p>
@@ -18,3 +22,8 @@
   </div>
 
 </div>
+
+<div id="comments_block">
+   <%= render 'comments/form' %>
+ </div>
+ <%# @comment.body if @comment.body.present %>

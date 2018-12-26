@@ -1,0 +1,12 @@
+<div class="col-md-0 comments">
+  <h3 class="comments_title"><strong>Comments</strong></h3>
+  <%= form_for [@product, Comment.new] do |f| %>
+  <p></p>
+  <%= f.text_area :body, required: true, class: 'form-control btn-form comment_form' %>
+
+  <div class="col-sm-12 text-center comment_button">
+    <%= f.submit 'Create comment', remote: true, class: 'btn btn-primary btn-comment' %>
+    <hr>
+  </div>
+  <% end %>
+</div>

@@ -1,5 +1,6 @@
 /*
  *
+ *= require jquery-ui
  *= require_tree .
  *= require_self
  */
@@ -66,4 +67,24 @@
   margin-left: 30px;
   min-width: 500px;
   height: 300px;
+}
+
+// COMMENTS
+.comments {
+  margin-top: 50px;
+  .comments_title {
+    text-align: center;
+  }
+}
+
+.comment_button {
+  margin-top: 10px;
+}
+
+.comment_form {
+  max-width: 500px;
+  height: 100px;
+  // text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
