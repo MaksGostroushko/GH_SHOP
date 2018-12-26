@@ -1,14 +1,20 @@
-<div class="show_product">
+<div class="row">
 
-  <div>
-    <%= image_tag ( @product.picture.url if @product.picture? ), class: 'product_image' %>
+  <div class="col-md-4">
+    <%= render 'carousel' %>
   </div>
-  <h1><%= @product.title %></h1>
-  <h2><%= number_to_currency( @product.price, precision: 0 ) %></h2>
-  <p><%= @product.result %></p>
-  <p><%= @product.description %></p>
 
-  <%= link_to "edit", edit_product_path(@product), class: 'btn btn-sm btn-warning' %>
-  <%= link_to "delete", product_path(@product), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-sm btn-danger' %>
+  <div class="show_product col-md-8">
+    <div>
+      <%= image_tag ( @product.picture.url if @product.picture? ), class: 'product_image' %>
+    </div>
+    <h1><%= @product.title %></h1>
+    <h2><%= number_to_currency( @product.price, precision: 0 ) %></h2>
+    <p><%= @product.result %></p>
+    <p><%= @product.description %></p>
+
+    <%= link_to "edit", edit_product_path(@product), class: 'btn btn-sm btn-warning' %>
+    <%= link_to "delete", product_path(@product), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-sm btn-danger' %>
+  </div>
 
 </div>

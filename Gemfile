@@ -9,6 +9,7 @@ gem 'will_paginate', '3.1.6'
 gem 'jquery-rails'
 gem 'acts_as_list'
 gem 'carrierwave', '1.2.2'
+gem 'jquery-ui-rails', '~> 5.0.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
