@@ -4,11 +4,26 @@
     <%= image_tag product.pictures[0].url(:thumb) if product.pictures.present? %>
     <h2><%= link_to product.title, product_path(product) %></h2>
     <h2><%= number_to_currency( product.price, precision: 0 ) %></h2>
+    <%= product.result %>
+    <h5><%= product.description %></h5>
   </section>
 
   <section class="post-description">
-    <%= product.result %>
   </section>
     <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning btn-sm' %>
     <%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger btn-sm' %>
+
+    <%= form_for @order_item, remote: true do |f| %>
+      <% if product.published %>
+        <div class="input-group">
+          <%= f.number_field :quantity, value: 1, class: "form-control form_cart", min: 1 %>
+          <div class="input-group-btn">
+            <%= f.hidden_field :product_id,class: "form_cart", value: product.id %>
+            <%= f.submit "Add to Cart", class: "btn btn-primary btn_cart", data: { confirm: "Are you sure?" } %>
+          </div>
+        </div>
+      <% else %>
+      <div class="div_published_false"><span class="span_published_false">Sorry,product in a way</span></div>
+      <% end %>
+    <% end %>
 </article>

@@ -23,7 +23,12 @@
 
     <span class="picture">
       <%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
-    </span
+    </span>
+
+  <div>
+    <%= f.label :published %>
+    <%= f.check_box :published %>
+  </div>
 
   <p></p>
 
