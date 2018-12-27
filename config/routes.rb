@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'products#index'
 
   get 'payment',  to: 'static_pages#payment'

@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
   has_many :comments, dependent: :destroy
   has_many :line_items
+  has_many :categories
 
   mount_uploaders :pictures, PictureUploader
 

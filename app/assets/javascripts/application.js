@@ -19,11 +19,9 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
-    let products = [
-        'Title'
-    ];
-    $("#find").autocomplete({
-        source: products
-    });
+$(function() {
+    	$('img').on('click', function() {
+			$('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+			$('#enlargeImageModal').modal('show');
+		});
 });
