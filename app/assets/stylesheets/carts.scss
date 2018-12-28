@@ -1,3 +1,11 @@
 // Place all the styles related to the Carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.cart_image {
+  max-width: 40px;
+  max-height: 30px;
+}
+
+.cart_info {
+font-size: 30px;
+}

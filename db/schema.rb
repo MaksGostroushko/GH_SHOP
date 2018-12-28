@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2018_12_27_212807) do
     t.string "picture"
     t.json "pictures"
     t.boolean "published", default: false
-    t.boolean "active"
+    t.boolean "active", default: false
   end
 
   create_table "search_suggestions", force: :cascade do |t|

@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [ :show, :edit, :update, :destroy ]
 
   def index
+    @products = Product.all
     @order_item = current_order.order_items.new
       if params[:search]
         @products = Product.search(params[:search]).order(created_at: :desc)
@@ -49,7 +50,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :price, :result, :description, {pictures: []}, :published)
+    params.require(:product).permit(:title, :price, :result, :description, {pictures: []}, :published, :active)
   end
 
   def set_product

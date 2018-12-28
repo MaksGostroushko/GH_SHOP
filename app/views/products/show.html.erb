@@ -11,13 +11,7 @@
    </div>
 </div>
 <!-- <div class="container"> -->
-  <div class="row">
-      <div class="col-md-4 show_milti_image">
-        <%= image_tag (@product.pictures[0].url(:large) if @product.pictures), id: "myImg" %>
-        <% @product.pictures.each do |i| %>
-            <%= image_tag i.url(:thumb), id: "myImg" %>
-        <% end %>
-      </div>
+  <%= render 'images' %>
 <!-- </div> -->
 
       <div class="show_product col-md-8">
