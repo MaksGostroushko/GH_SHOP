@@ -12,6 +12,12 @@ class ProductsController < ApplicationController
   end
 
   def show
+    if cookies[:products].present?
+      cookies[:products] += ",#{@product.id}"
+    else
+      cookies[:products] = @product.id
+    end
+      @last_products = Product.where(id: cookies[:products].to_s.split(','))
   end
 
   def new

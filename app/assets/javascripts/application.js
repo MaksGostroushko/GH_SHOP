@@ -9,7 +9,7 @@
 //= require_tree .
 
 $(function() {
-    	$('#myImg').on('click', function() {
+    	$('.img_plus').on('click', function() {
 			$('.enlargeImageModalSource').attr('src', $(this).attr('src'));
 			$('#enlargeImageModal').modal('show');
 		});

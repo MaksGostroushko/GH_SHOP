@@ -15,17 +15,18 @@
 <!-- </div> -->
 
       <div class="show_product col-md-8">
-
       <h1><%= @product.title %></h1>
       <h2><%= number_to_currency( @product.price, precision: 0 ) %></h2>
       <p><%= @product.result %></p>
       <p><%= @product.description %></p>
     </div>
+    <!-- <h3> Last viewed products</h3> -->
+    <%# @last_products.each do |product| %>
+    <%# if product != @product %>
+    <%# end %>
+    </div>
 
-  </div>
-</div>
-
-  <div id="comments_block">
+   <div id="comments_block">
      <%= render 'comments/form' %>
    </div>
    <%# @comment.body if @comment.body.present %>
