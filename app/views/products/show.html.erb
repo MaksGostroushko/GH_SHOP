@@ -41,8 +41,7 @@
     <% if product != @product %>
         <div class="card text-center" style="width: 20rem;">
           <div class="card-body">
-            <%= link_to (image_tag product.pictures.first.url(:thumb)),
-                                                          product_path(product) if product.pictures.present? %>
+            <%= link_to (image_tag product.pictures.first.url(:thumb)), product_path(product) if product.pictures.present? %>
             <br><br>
             <h5 class="card-title"><b><%= link_to product.title, product_path(product) %></b></h5>
 

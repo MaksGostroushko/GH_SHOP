@@ -2,6 +2,6 @@
     <div class="col-md-4 show_milti_image">
       <%= image_tag (@product.pictures[0].url(:large) if @product.pictures), id: "myImg", class: 'img_plus' %>
       <% @product.pictures.each do |i| %>
-          <%= image_tag i.url(:thumb), id: "myImg", class: 'img_plus' %>
+          <%= image_tag i.url(:thumb), id: "myImg", class: 'img_plus' unless @product.pictures[0] %>
       <% end %>
     <!-- </div> -->
