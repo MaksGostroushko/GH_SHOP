@@ -11,7 +11,7 @@ gem 'acts_as_list'
 gem 'carrierwave', '1.2.2'
 gem 'jquery-ui-rails'
 gem 'ancestry'
-
+gem 'recaptcha', :require => 'recaptcha/rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
