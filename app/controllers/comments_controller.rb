@@ -12,7 +12,7 @@ before_action :find_product
       redirect_to @product
     else
       redirect_to @product
-      flash[:danger] = "Comment is too long"
+      flash[:danger] = "Sorry, problem"
     end
   end
 
@@ -30,6 +30,6 @@ before_action :find_product
   end
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body, :name)
   end
 end

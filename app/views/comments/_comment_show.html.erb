@@ -1,7 +1,9 @@
 <div class="comment">
 <% @product.comments.all.each do |c| %>
-    <%= c.body %>
+    <h4><%= c.name %></h4>
+    <br>
+    <h6><%= c.body %></h6>
+    <%# link_to 'Delete', product_comment_path(@product, comments), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger btn-sm' %>
     <hr>
     <% end %>
   </div>
-  <%# link_to "Delete", [@product, comments], class: 'btn btn-danger', data: { confirm: "Are you sure? "}, method: :delete %>
