@@ -2,10 +2,11 @@
   <section class="post-head">
     <%# link_to ( image_tag product.picture.url(:thumb) if product.picture? ), product_path(product) %>
     <%= image_tag product.pictures[0].url(:thumb) if product.pictures.present? %>
-    <h2><%= link_to product.title, product_path(product) %></h2>
+    <h2><%= sanitize link_to product.title, product_path(product)  %></h2>
     <h2><%= number_to_currency( product.price, precision: 0 ) %></h2>
     <%= product.result %>
-    <h5><%= product.description %></h5>
+    <h5><%= sanitize(product.description.truncate(30, separator: '</p>')) %></h5>
+
   </section>
 
   <section class="post-description">

@@ -15,10 +15,10 @@
 <!-- </div> -->
 
       <div class="show_product col-md-8">
-      <h1><%= @product.title %></h1>
+      <h1><%= sanitize @product.title %></h1>
       <h2><%= number_to_currency( @product.price, precision: 0 ) %></h2>
       <p><%= @product.result %></p>
-      <p><%= @product.description %></p>
+      <p><%= sanitize @product.description %></p>
     </div>
     <!-- <h3> Last viewed products</h3> -->
     <%# @last_products.each do |product| %>
