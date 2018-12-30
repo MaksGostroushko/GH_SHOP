@@ -29,11 +29,11 @@
   .product_grid {
     // margin-left: 10px;
     // padding: 50px;
-    width: 1000px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 70px;
   }
 
   .product {
@@ -54,6 +54,7 @@
   .show_product {
     text-align: center;
     margin-top: 50px;
+    margin-left: 100px
   }
 
   .product_image {
@@ -94,6 +95,7 @@
 
   .show_milti_image {
     margin-top: 50px;
+    margin-left: 40px;
   }
 
   #myImg {
@@ -122,4 +124,12 @@
 
   .span_published_false {
     margin-left: 60px;
+  }
+
+  .row {
+    max-width: 1300px;
+  }
+
+  body {
+    max-width: 1300px;
   }

@@ -23,6 +23,8 @@ class Product < ApplicationRecord
     where("title ILIKE ?", "%#{search}%")
   end
 
+  self.per_page = 10
+
   # scope :published, -> { where(published: true) }
 
 

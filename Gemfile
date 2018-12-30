@@ -13,6 +13,7 @@ gem 'jquery-ui-rails'
 gem 'ancestry'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'trix-rails', require: 'trix'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

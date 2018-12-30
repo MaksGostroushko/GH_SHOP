@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [ :show, :edit, :update, :destroy ]
+  before_action :find_product, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @products = Product.all
+    @products = Product.all.paginate(page: params[:page], per_page: 3)
     @order_item = current_order.order_items.new
       if params[:search]
         @products = Product.search(params[:search]).order(created_at: :desc)
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     else
       cookies[:products] = @product.id
     end
-      @last_products = Product.where(id: cookies[:products].to_s.split(','))
+      @last_products = Product.where(id: cookies[:products].to_s.split(',')).limit(4)
   end
 
   def new
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
         redirect_to @product
       else
         flash[:danger] = "New product don't create"
-        render :new
+        render 'new'
       end
   end
 
@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:title, :price, :result, :description, {pictures: []}, :published, :active)
   end
 
-  def set_product
+  def find_product
     @product = Product.find(params[:id])
   end
 end

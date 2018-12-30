@@ -1,20 +1,22 @@
-<div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
-   <div class="modal-dialog modal-lg" role="document">
-     <div class="modal-content">
-       <div class="modal-header">
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-       </div>
-       <div class="modal-body">
-         <img src="" class="enlargeImageModalSource" style="width: 100%;">
+<div class="col-md-6">
+  <div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
+     <div class="modal-dialog modal-lg" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+         </div>
+         <div class="modal-body">
+           <img src="" class="enlargeImageModalSource" style="width: 100%;">
+         </div>
        </div>
      </div>
-   </div>
+  </div>
 </div>
 <!-- <div class="container"> -->
   <%= render 'images' %>
-<!-- </div> -->
+</div>
 
-      <div class="show_product col-md-8">
+    <div class="show_product col-md-6">
       <h1><%= sanitize @product.title %></h1>
       <h2><%= number_to_currency( @product.price, precision: 0 ) %></h2>
       <p><%= @product.result %></p>
@@ -25,6 +27,29 @@
     <%# if product != @product %>
     <%# end %>
     </div>
+
+    <% if @last_products.count > 1 %>
+      <h3 class="text-center"><b>Last viewed products</b></h3>
+    <% end %>
+
+    <br>
+
+    <div class="row">
+  <% @last_products.each do |product| %>
+    <% if product != @product %>
+        <div class="card text-center" style="width: 20rem;">
+          <div class="card-body">
+            <%= link_to (image_tag product.pictures.first.url(:thumb)),
+                                                          product_path(product) if product.pictures.present? %>
+            <br><br>
+            <h5 class="card-title"><b><%= link_to product.title, product_path(product) %></b></h5>
+
+            <p class="card-text"><b><%= number_to_currency(product.price) %></b></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
    <div id="comments_block">
      <%= render 'comments/form' %>
