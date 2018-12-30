@@ -12,6 +12,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @comments = @product.comments
+
     if cookies[:products].present?
       cookies[:products] += ",#{@product.id}"
     else

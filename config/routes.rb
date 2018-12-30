@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   resources :products do
     resources :comments
   end
-  resources :products 
+  # resources :products 
   resources :pages
 end
