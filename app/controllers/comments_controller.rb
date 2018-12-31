@@ -30,6 +30,6 @@ before_action :find_product
   end
 
   def comment_params
-    params.require(:comment).permit(:body, :name)
+    params.require(:comment).permit(:body, :name, :rating)
   end
 end
