@@ -1,11 +1,13 @@
 /*
  *
  *= require trix
+ *= require lightbox
  *= require jquery-ui
  *= require_tree .
  *= require_self
  */
  @import "bootstrap";
+ @import 'lightbox';
 
    .logo {
      max-width: 100px;

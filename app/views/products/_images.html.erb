@@ -1,7 +1,12 @@
-<div class="row">
-    <div class="col-md-4 show_milti_image">
-      <%= image_tag (@product.pictures[0].url(:large) if @product.pictures), id: "myImg", class: 'img_plus' %>
-      <% @product.pictures.each do |i| %>
-          <%= image_tag i.url(:thumb), id: "myImg", class: 'img_plus' unless @product.pictures[0] %>
-      <% end %>
-    <!-- </div> -->
+<div class="left">
+<% if @product.pictures.present? %>
+  <% @product.pictures.each do |picture| %>
+    <% if @product.pictures.first == picture %>
+      <%= link_to image_tag(picture.url(:large)), product_path(picture), data: { lightbox: "roadtrip" }, class: 'show_main_image' %>
+      <br>
+    <% else %>
+      <%= link_to image_tag(picture.url(:thumb)), product_path(picture), data: { lightbox: "roadtrip" } %>
+    <% end %>
+  <% end %>
+<% end %>
+</div>

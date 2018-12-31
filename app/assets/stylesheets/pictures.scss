@@ -8,3 +8,34 @@
   }
 
 }
+#content {
+   width: 800px;
+   height: 500px;
+   margin-left: 30px;
+}
+
+#left, #right {
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+}
+
+.left {
+  margin-left: 70px;
+}
+
+.right {
+  margin-left: 100px;
+}
+
+.show_main_image {
+  margin-left: 50px;
+}
+
+// .cards {
+//   margin-top: 20px;
+// }
+
+.view_text {
+  margin-top: 60px;
+}
