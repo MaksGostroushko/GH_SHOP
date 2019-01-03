@@ -49,6 +49,12 @@ class ProductsController < ApplicationController
       end
   end
 
+  def avg_rating
+    @total_rating = 0
+    @comments.each { |r| @total_rating += r.rating }
+    @average_rating = (@total_rating.to_f / @comments.count.to_f) if @comments.present?
+  end
+
   def destroy
     @product.destroy!
     flash[:success] = "Product destroy"

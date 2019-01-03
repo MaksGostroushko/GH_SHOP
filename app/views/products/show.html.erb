@@ -48,6 +48,14 @@
       <% end %>
     <% end %>
   </div>
+  <div class="col-6">
+     <% if @average_rating.present? %>
+       <% @average_rating.to_i.times do %>
+         <%= fa_icon "star 2x", class: 'review' %>
+       <% end %>
+       <%= fa_icon "star-half 2x", class: 'review' if @avg_rating - @average_rating.to_i >= 0.5 %>
+   <% end %>
+   </div>
 
    <div id="comments_block">
      <%= render 'comments/form' %>

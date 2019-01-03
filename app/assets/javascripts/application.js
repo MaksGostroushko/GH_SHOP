@@ -16,3 +16,10 @@ $(function() {
 			$('#enlargeImageModal').modal('show');
 		});
 });
+
+
+$(document).on('turbolinks:load', function() {
+    $('#star').on('click', function(){
+        $(this).css('color', 'yellow');
+    });
+});
