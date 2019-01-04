@@ -22,6 +22,22 @@
       " - $" + $( "#slider-range" ).slider( "values", 1 ) );
   } );
   </script>
+  <script>
+  $( function() {
+    var availableTags = [
+      "Tarko",
+      "Berinchik",
+      "Loma",
+      "Lomachenko",
+      "Matrix",
+      "Usyk",
+      "Universal"
+    ];
+    $( "#search" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
   </head>
   <body>
     <h1 class="product_title">Boxers</h1>
