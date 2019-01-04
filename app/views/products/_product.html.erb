@@ -1,28 +1,32 @@
 <article class="product">
-  <section class="post-head">
-    <%= link_to (image_tag product.pictures[0].url(:thumb) if product.pictures.present?), product_path(product) %>
-    <h2><%= sanitize link_to product.title, product_path(product)  %></h2>
-    <h2><%= number_to_currency( product.price, precision: 0 ) %></h2>
-    <%= product.result %>
-    <h5><%= sanitize(product.description.truncate(30, separator: '</p>')) %></h5>
-  </section>
+  <div class="order">
+    <div class="head-order">
+      <section class="post-head">
+        <%= link_to (image_tag product.pictures[0].url(:thumb) if product.pictures.present?), product_path(product) %>
+        <h2><%= sanitize link_to product.title, product_path(product)  %></h2>
+        <h2><%= number_to_currency( product.price, precision: 0 ) %></h2>
+        <%= product.result %>
+        <h5><%= sanitize(product.description.truncate(30, separator: '</p>')) %></h5>
+      </section>
+  </div>
 
-  <section class="post-description">
-  </section>
-    <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning btn-sm' %>
-    <%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger btn-sm' %>
+    <div class="product_button">
+      <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning btn-sm' %>
+      <%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger btn-sm' %>
+    </div>
 
-    <%= form_for @order_item, remote: true do |f| %>
-      <% if product.published %>
-        <div class="input-group">
-          <%= f.number_field :quantity, value: 1, class: "form-control form_cart", min: 1 %>
-          <div class="input-group-btn">
-            <%= f.hidden_field :product_id,class: "form_cart", value: product.id %>
-            <%= f.submit "Add to Cart", class: "btn btn-primary btn_cart", data: { confirm: "Are you sure?" } %>
+      <%= form_for @order_item, remote: true do |f| %>
+        <% if product.published %>
+          <div class="input-group">
+            <%= f.number_field :quantity, value: 1, class: "form-control form_cart", min: 1 %>
+            <div class="input-group-btn">
+              <%= f.hidden_field :product_id,class: "form_cart", value: product.id %>
+              <%= f.submit "Add to Cart", class: "btn btn-primary btn_cart", data: { confirm: "Are you sure?" } %>
+            </div>
           </div>
-        </div>
-      <% else %>
-      <div class="div_published_false"><span class="span_published_false">Sorry,the boxer has a stomach ache</span></div>
+        <% else %>
+        <div class="div_published_false"><span class="span_published_false">Sorry,the boxer has a stomach ache</span></div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
 </article>
