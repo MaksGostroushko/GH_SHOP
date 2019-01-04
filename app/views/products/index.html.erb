@@ -31,6 +31,7 @@
       "Lomachenko",
       "Matrix",
       "Usyk",
+      "Gvozdik",
       "Universal"
     ];
     $( "#search" ).autocomplete({
@@ -63,19 +64,13 @@
             </tr>
           </tbody>
         </table>
+        <%= render 'price_range' %>
       </div>
       <div class="col-md-10 row product_grid", style="max-width: 1000px">
         <%= render @products %>
       </div>
     </div>
     <%# will_paginate @products  %>
-    <p>
-  <label for="amount">Price range:</label>
-  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-  <%# field_tag(:price, id: "amount") %>
-</p>
 
-<div id="slider-range"></div>
- <br>
   </body>
 </html>
