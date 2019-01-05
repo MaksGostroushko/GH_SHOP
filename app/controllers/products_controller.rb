@@ -2,12 +2,19 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [ :show, :edit, :update, :destroy ]
 
   def index
+    @categories = Category.all
     @products = Product.all.paginate(page: params[:page], per_page: 3)
     @order_item = current_order.order_items.new
+    @products = @products.where(id: ProductCategory.where(category_id: params[:filter]).pluck(:product_id)) if params[:filter]
+
       if params[:search]
         @products = Product.search(params[:search]).order(created_at: :desc)
       else
         @products = Product.all.order(created_at: :desc)
+      end
+      respond_to do |format|
+        format.html
+        format.json { render json: @products.pluck(:title) }
       end
   end
 
@@ -19,7 +26,7 @@ class ProductsController < ApplicationController
     else
       cookies[:products] = @product.id
     end
-      @last_products = Product.where(id: cookies[:products].to_s.split(',')).limit(4)
+      @last_products = Product.where(id: cookies[:products].to_s.split(',')).last(4)
   end
 
   def new

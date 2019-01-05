@@ -1,0 +1,16 @@
+<div>
+  <%= form_tag products_path, method: :get do %>
+    <ul class="category">
+      <% @categories.each do |category| %>
+      <li>
+        <%= check_box_tag "filter[]", category.id, params[:filter] ? params[:filter].include?(category.id.to_s) : false, id: "cb#{category.id}" %>
+
+        <label for="cb<%= category.id %>"><%= category.name %></label>
+
+        <b class=''><%= category.products.count %></b>
+      </li>
+      <% end %>
+    </ul>
+    <%= submit_tag 'Find', class: 'btn btn-success ' %>
+  <% end %>
+</div>

@@ -1,12 +1,12 @@
 <div class="well">
 
-  <div class="row">
-    <div class="col-xs-8">
+  <div class="row cart_show">
+    <div class="col-xs-8 cart_show">
       <h4><%= product.title %></h4>
       <h4><%= product.result %></h4>
       <h4><%= product.description %></h4>
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-4 cart_show">
 
       <%= form_for order_item, remote: true do |f| %>
         <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency order_item.unit_price %></span></h4>

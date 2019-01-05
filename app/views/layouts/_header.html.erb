@@ -4,7 +4,7 @@
   <%= link_to "Payment", payment_path, class: 'navbar-brand' %>
   <%= link_to "Delivery", delivery_path, class: 'navbar-brand' %>
   <%= link_to "Info", info_path, class: 'navbar-brand' %>
-  <%= link_to "New item", new_product_path, class: 'navbar-brand' %>
+  <%# link_to "New item", new_product_path, class: 'navbar-brand' %>
   <div class="row">
     <%= form_tag products_path, method: :get, class: "form-inline my-2 my-lg-0 search_form", id: "search-form" do %>
     <%= text_field_tag(
@@ -26,4 +26,9 @@
       <th id="email"></th>
     </tr>
   </table>
+
+      <div class="col-xs-6 text-right">
+         <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+      </div>
+
 </nav>
