@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'products#index'
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
+  resources :pages
 
   get 'payment',  to: 'static_pages#payment'
   get 'delivery', to: 'static_pages#delivery'
@@ -18,5 +19,4 @@ Rails.application.routes.draw do
     resources :comments
   end
   # resources :products
-  resources :pages
 end
