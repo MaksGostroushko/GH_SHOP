@@ -7,11 +7,12 @@
 
           <label for="cb<%= category.id %>"><%= category.name %></label>
 
-          <b class='float-right'><%= category.products.count %></b>
+          <b class=''><%= category.products.count %></b>
         </li>
         <% end %>
       </ul>
 
+    <div class="price">
       <p><b>Price:</b></p>
 
       <%= text_field_tag :min_price, nil, class: 'price-form form-control', placeholder: 'Min' %>
@@ -24,4 +25,5 @@
 
       <%= submit_tag 'Find', class: 'btn btn-success' %>
   <% end %>
+  </div>
 </div>
