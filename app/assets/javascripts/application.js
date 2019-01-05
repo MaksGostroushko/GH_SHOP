@@ -1,14 +1,13 @@
 //
-//= require jquery
-//= require jquery-ui
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+//= require jquery
+//= require jquery3
+//= require jquery-ui
 //= require lightbox
 //= require trix
-//= require jquery3
 //= require bootstrap-sprockets
-//= require_tree .
+//= require turbolinks
 
 $(function() {
     	$('.img_plus').on('click', function() {
@@ -22,4 +21,31 @@ $(document).on('turbolinks:load', function() {
     $('#star').on('click', function(){
         $(this).css('color', 'yellow');
     });
+    $("#email").html("<n uers='znvygb:obkvat@znvy.pbz'>obkvat@tznvy.pbz</n>".replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+
+    var availableTags = [
+      "Tarko",
+      "Berinchik",
+      "Loma",
+      "Lomachenko",
+      "Matrix",
+      "Usyk",
+      "Gvozdik",
+      "Universal"
+    ];
+    $( "#search" ).autocomplete({
+      source: availableTags
+    });
+    //
+    // $( "#slider-range" ).slider({
+    //   range: true,
+    //   min: 0,
+    //   max: 1000,
+    //   values: [ 75, 300 ],
+    //   slide: function( event, ui ) {
+    //     $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+    //   }
+    // });
+    // $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+    //   " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 });

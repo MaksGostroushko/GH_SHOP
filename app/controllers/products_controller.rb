@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @comments = @product.comments
+    @comments = @product.comments.where(status: true)
 
     if cookies[:products].present?
       cookies[:products] += ",#{@product.id}"

@@ -3,8 +3,11 @@
  *= require trix
  *= require lightbox
  *= require jquery-ui
- *= require_tree .
  *= require_self
+ *= require carts
+ *= require comments
+ *= require pictures
+ *= require products
  */
  @import "bootstrap";
  @import 'lightbox';

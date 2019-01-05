@@ -5,28 +5,25 @@
   <%= link_to "Delivery", delivery_path, class: 'navbar-brand' %>
   <%= link_to "Info", info_path, class: 'navbar-brand' %>
   <%= link_to "New item", new_product_path, class: 'navbar-brand' %>
-<div class="row">
-  <%= form_tag products_path, method: :get, class: "form-inline my-2 my-lg-0 search_form", id: "search-form" do %>
+  <div class="row">
+    <%= form_tag products_path, method: :get, class: "form-inline my-2 my-lg-0 search_form", id: "search-form" do %>
     <%= text_field_tag(
-        :search,
-        params[:search],
-        placeholder: "Search",
-        class: "form-control mr-sm-2", id: "search"
+    :search,
+    params[:search],
+    placeholder: "Search",
+    class: "form-control mr-sm-2", id: "search"
     ) %>
     <%= submit_tag "Search", class: 'btn btn-outline-success my-2 my-sm-0' %>
-  <% end %>
-</div>
-    <table class="table_contact">
+    <% end %>
+  </div>
+  <table class="table_contact">
+    <tr>
+      <th>+380961843222</th>
+    </tr>
+    <tr>
       <tr>
-        <th>+380961843222</th>
-      </tr>
-      <tr>
-        <tr>
-          <th>boxing&#064;gmail.com(FIXED!)</th>
-          <!-- <script>
-            document.write("<n uers='znvygb:obkvat@znvy.pbz'>obkvat@tznvy.pbz</n>".replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
-          </script>
-        </th> -->
-      </tr>
-</table>
+        <!-- <th>boxing&#064;gmail.com(FIXED!)</th> -->
+      <th id="email"></th>
+    </tr>
+  </table>
 </nav>

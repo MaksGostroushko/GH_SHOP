@@ -3,14 +3,13 @@ class Product < ApplicationRecord
   has_many :product_categories
   has_many :categories, through: :product_categories
   has_many :comments, dependent: :destroy
-  has_many :line_items
   has_many :categories
   has_many :order_items
 
   validates :title, presence: true, length: { minimum: 3, maximum: 30 }
   validates :result, presence: true
   validates :price, presence: true
-  validates :pictures, presence: true
+  # validates :pictures, presence: true
   validates :description, presence: true, length: { minimum: 10, maximum: 500 }
 
   scope :published, -> { where(published: true) }
