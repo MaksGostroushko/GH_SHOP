@@ -27,10 +27,13 @@
   </div>
   <table class="table_contact">
     <tr>
-      <th>+380961843222</th>
+      <th>
+        <% @settings.each do |setting| %>
+          <%= setting.set_value %>
+        <% end %>
+      </th>
     </tr>
     <tr>
-      <tr>
         <!-- <th>boxing&#064;gmail.com(FIXED!)</th> -->
       <th id="email"></th>
     </tr>

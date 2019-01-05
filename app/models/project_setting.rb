@@ -1,0 +1,2 @@
+class ProjectSetting < ApplicationRecord
+end
