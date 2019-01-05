@@ -2,7 +2,7 @@ ActiveAdmin.register Product do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :product, :of, :title, :result, :description, :price, :published, pictures:[]
+permit_params :product, :of, :title, :result, :description, :price, :published, pictures:[], category_ids: []
 
 
   form title: 'A custom title' do |f|

@@ -3,9 +3,11 @@ class ProductsController < ApplicationController
 
   def index
     @categories = Category.all
-    @products = Product.all.paginate(page: params[:page], per_page: 3)
+    @products = Product.order(created_at: :desc)
     @order_item = current_order.order_items.new
     @products = @products.where(id: ProductCategory.where(category_id: params[:filter]).pluck(:product_id)) if params[:filter]
+    @products = @products.where('price >= ?', params[:min_price]) if params[:min_price].present?
+    @products = @products.where('price <= ?', params[:max_price]) if params[:max_price].present?
 
       if params[:search]
         @products = Product.search(params[:search]).order(created_at: :desc)
