@@ -6,12 +6,10 @@
 //= require jquery-ui
 //= require lightbox
 //= require trix
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require turbolinks
-//= require cable
 //= require comment
 //= require flash
-//= require gallery
 //= require rating
 
 $(function() {
@@ -23,6 +21,8 @@ $(function() {
 
 
 $(document).on('turbolinks:load', function() {
+    lightbox.init();
+
     $('#star').on('click', function(){
         $(this).css('color', 'yellow');
     });

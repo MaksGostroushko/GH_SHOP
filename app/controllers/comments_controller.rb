@@ -7,7 +7,7 @@ before_action :find_product
   end
 
   def create
-    @comment = @product.comments.create(comment_params)
+    @comment = @product.comments.create!(comment_params)
     if verify_recaptcha(model: @comment) && @comment.save
       redirect_to @product
     else

@@ -1,7 +1,7 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 <div class="comment">
-<% @product.comments.all.each do |c| %>
+<% @comments.all.each do |c| %>
     <h4><%= c.name %></h4>
     <br>
     <h6><%= c.body %></h6>

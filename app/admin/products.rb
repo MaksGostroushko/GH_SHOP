@@ -12,7 +12,7 @@ permit_params :product, :of, :title, :result, :description, :price, :published, 
       input :description
       input :price
       input :published
-      # input :category_ids, as: :check_boxes, collection: Category.all.map { |c| [c.name, c.id] }
+      input :category_id, as: :check_boxes, collection: Category.all.map { |c| [c.name, c.id] }
       input :pictures, as: :file, input_html: { multiple: true }
     end
     actions

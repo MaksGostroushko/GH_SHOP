@@ -2,10 +2,10 @@
 <% if @product.pictures.present? %>
   <% @product.pictures.each do |picture| %>
     <% if @product.pictures.first == picture %>
-      <%= link_to image_tag(picture.url(:large)), product_path(picture), data: { lightbox: "roadtrip" }, class: 'show_main_image' %>
+      <%= link_to image_tag(picture.url(:large)), asset_url(picture.url(:large)), data: { lightbox: "roadtrip" }, class: 'show_main_image' %>
       <br>
     <% else %>
-      <%= link_to image_tag(picture.url(:thumb)), product_path(picture), data: { lightbox: "roadtrip" }, class: "show_other_images" %>
+      <%= link_to image_tag(picture.url(:thumb)), asset_url(picture.url(:large)), data: { lightbox: "roadtrip" }, class: "show_other_images" %>
     <% end %>
   <% end %>
 <% end %>
