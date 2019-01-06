@@ -26,6 +26,15 @@
       </div>
   </div>
 
+  <div class="col-6">
+     <% if @avg_rating.present? %>
+       <% @age_rating.to_i.times do %>
+       <%= fa_icon "star 2x", class: 'review' %>
+     <% end %>
+       <%= fa_icon "star-half 2x", class: 'review' if @avg_rating - @avg_rating.to_i >= 0.5 %>
+     <% end %>
+   </div>
+
     <!-- </div> -->
     <% if @last_products.count > 1 %>
       <h3 class="text-center view_text"><b>Last viewed products</b></h3>
@@ -48,14 +57,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="col-6">
-     <% if @average_rating.present? %>
-       <% @average_rating.to_i.times do %>
-         <%= fa_icon "star 2x", class: 'review' %>
-       <% end %>
-       <%= fa_icon "star-half 2x", class: 'review' if @average_rating - @average_rating.to_i >= 0.5 %>
-   <% end %>
-   </div>
+
 
    <div id="comments_block">
      <%= render 'comments/form' %>

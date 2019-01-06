@@ -3,6 +3,7 @@
   <div class="row cart_show">
     <div class="col-xs-8 cart_show">
       <h4><%= sanitize product.title %></h4>
+      <%= link_to (image_tag product.pictures[0].url(:thumb) if product.pictures.present?), product_path(product) %>
       <h4><%= sanitize product.result %></h4>
       <h4><%= sanitize product.description %></h4>
     </div>

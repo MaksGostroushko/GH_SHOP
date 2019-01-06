@@ -8,6 +8,11 @@
 //= require trix
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require cable
+//= require comment
+//= require flash
+//= require gallery
+//= require rating
 
 $(function() {
     	$('.img_plus').on('click', function() {
