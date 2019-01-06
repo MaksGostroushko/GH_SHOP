@@ -1,6 +1,8 @@
 .order {
-  border: 5px outset lightgray;
   padding: .9px;
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .post-head{
@@ -8,8 +10,15 @@
 }
 
 .head-order {
-  :hover{
-    background-color: #EAEDED;
+  :hover  {
+    background-color: #FDFEFE;
+    border: 5px outset lightgray;
+  }
+}
+
+.head-order section, h2, h5 {
+  :hover {
+    border: 0px solid white !important;
   }
 }
 

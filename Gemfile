@@ -18,6 +18,7 @@ gem "font-awesome-rails"
 gem 'lightbox2-rails'
 gem 'activeadmin'
 gem 'devise'
+gem "recaptcha"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
