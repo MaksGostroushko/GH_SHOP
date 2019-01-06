@@ -11,19 +11,14 @@
       <div class="right">
         <h1><%= sanitize @product.title %></h1>
         <h2><%= number_to_currency( @product.price, precision: 0 ) %></h2>
-        <p><%= @product.result %></p>
+        <%= @product.result %><br>
+        <% if @avg_rating.present? %>
+        Average rating: <%= @avg_rating %>
+        <% end %>
         <p><%= sanitize @product.description %></p>
-      </div>
+        </div>
   </div>
 
-  <div class="col-6">
-     <% if @avg_rating.present? %>
-       <% @avg_rating.to_i.times do %>
-       <%= fa_icon "star 2x", class: 'review' %>
-     <% end %>
-       <%= fa_icon "star-half 2x", class: 'review' if @avg_rating - @avg_rating.to_i >= 0.5 %>
-     <% end %>
-   </div>
 
     <!-- </div> -->
     <% if @last_products.count > 1 %>

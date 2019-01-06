@@ -12,7 +12,7 @@ before_action :find_product
       redirect_to @product
     else
       redirect_to @product
-      flash[:danger] = "Sorry, problem"
+      # flash[:danger] = "Sorry, problem"
     end
   end
 

@@ -36,6 +36,7 @@ permit_params :product, :of, :title, :result, :description, :price, :published, 
       row :result
       row :description
       row :price
+      row :category
       # row :published do |product|
         # div do
         #   product.categories.each do |c|
