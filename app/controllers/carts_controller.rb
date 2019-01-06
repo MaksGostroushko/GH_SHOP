@@ -3,7 +3,4 @@ class CartsController < ApplicationController
      @order_items = current_order.order_items
    end
 
-   def confirm
-
-   end
 end

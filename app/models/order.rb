@@ -7,6 +7,7 @@ class Order < ActiveRecord::Base
   }
 
   has_many :order_items, dependent: :destroy
+  has_many :products, dependent: :destroy
   before_save :update_subtotal
   before_create :set_status
 

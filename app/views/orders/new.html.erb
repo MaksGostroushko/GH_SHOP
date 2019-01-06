@@ -1,0 +1,29 @@
+<div class="orders_new">
+  <%= form_for @order, class: "form-group" do |f| %>
+    <%= f.label :name %>
+
+    <%= f.text_field :name, class:"form-control", required: true %>
+
+    <br>
+
+    <%= f.label :email %>
+
+    <%= f.text_field :email, class:"form-control", required: true %>
+
+    <br>
+
+    <%= f.label :phone %>
+
+    <%= f.text_field :phone, class:"form-control", required: true %>
+
+    <br>
+
+    <%= f.label :comment %>
+
+    <%= f.text_area :comment, class:"form-control", required: true %>
+
+    <br>
+
+    <%= f.submit 'Order', class: 'btn btn-primary' %>
+  <% end %>
+</div>

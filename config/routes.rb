@@ -5,14 +5,13 @@ Rails.application.routes.draw do
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   root 'products#index'
-  
+
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   resources :pages
+  resources :orders
 
-  get 'payment',  to: 'static_pages#payment'
-  get 'delivery', to: 'static_pages#delivery'
-  get 'info',     to: 'static_pages#info'
+  # get 'confirm',  to: 'carts#confirm'
 
   resources :products do
     resources :comments
