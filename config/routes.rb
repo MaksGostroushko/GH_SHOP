@@ -2,11 +2,10 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  # get 'order_items/create'
-  # get 'order_items/update'
-  # get 'order_items/destroy'
-  # get 'carts/show'
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   root 'products#index'
+  
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   resources :pages
@@ -18,5 +17,10 @@ Rails.application.routes.draw do
   resources :products do
     resources :comments
   end
-  # resources :products
 end
+
+  # get 'order_items/create'
+  # get 'order_items/update'
+  # get 'order_items/destroy'
+  # get 'carts/show'
+  # resources :products

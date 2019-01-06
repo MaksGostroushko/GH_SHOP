@@ -3,7 +3,7 @@ class OrderItemsController < ApplicationController
     @order = current_order
     @order_item = @order.order_items.build(order_item_params)
     @order.save!
-    # debugger
+    flash[:success] = "Item added in cart"
     session[:order_id] = @order.id
     redirect_back(fallback_location: root_path)
   end

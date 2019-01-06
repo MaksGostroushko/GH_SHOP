@@ -19,6 +19,7 @@ gem 'lightbox2-rails'
 gem 'activeadmin'
 gem 'devise'
 gem "recaptcha"
+gem 'letter_opener_web', '~> 1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
