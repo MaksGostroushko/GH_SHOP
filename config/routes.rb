@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   root 'products#index'
 
-  resource :cart, only: [:show]
+  get 'order/:id', to: 'orders#show', as: 'order'
+  get 'order_details', to: 'orders#order_details'
+  patch 'update_order_details', to: 'orders#update_order_details'
+  get 'cart', to: 'carts#show', as: 'cart'
   resources :order_items, only: [:create, :update, :destroy]
   resources :pages
-  resources :orders
 
   # get 'confirm',  to: 'carts#confirm'
 

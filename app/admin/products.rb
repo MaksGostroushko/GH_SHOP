@@ -12,7 +12,7 @@ permit_params :product, :of, :title, :result, :description, :price, :published, 
       input :description
       input :price
       input :published
-      input :category_id, as: :check_boxes, collection: Category.all.map { |c| [c.name, c.id] }
+      input :categories, as: :check_boxes, collection: Category.all.map { |c| [c.name, c.id] }
       input :pictures, as: :file, input_html: { multiple: true }
     end
     actions
@@ -36,16 +36,15 @@ permit_params :product, :of, :title, :result, :description, :price, :published, 
       row :result
       row :description
       row :price
-      row :category
-      # row :published do |product|
-        # div do
-        #   product.categories.each do |c|
-        #     div do
-        #       c.name
-        #     end
-        #   end
-        # end
-      # end
+      row :categories do |product|
+        div do
+          product.categories.each do |c|
+            div do
+              c.name
+            end
+          end
+        end
+      end
       row :pictures do
         div do
           if product.pictures.present?

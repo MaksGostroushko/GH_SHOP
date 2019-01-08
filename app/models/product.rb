@@ -1,9 +1,7 @@
 class Product < ApplicationRecord
-
   has_many :product_categories
   has_many :categories, through: :product_categories
   has_many :comments, dependent: :destroy
-  has_many :categories
   has_many :order_items
 
   validates :title, presence: true, length: { minimum: 3, maximum: 30 }

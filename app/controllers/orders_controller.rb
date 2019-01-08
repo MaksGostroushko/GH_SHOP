@@ -4,25 +4,23 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
-  def new
-    @order = Order.new
-  end
+  def order_details; end
 
-  def create
-    @order = Order.new(order_params)
-    # @order.add_order_from_cart(@cart)
-
-    if @order.save
+  def update_order_details
+    @order = current_order
+    if @order.update!(order_params)
+      session.delete(:order_id)
+      OrderMailer.send_mail_to_user(@order).deliver_now
+      OrderMailer.send_mail_to_admin(@order).deliver_now
       redirect_to @order
-      flash[:success] = 'Your order was created. We call you'
     else
-      render 'new'
+      render :order_details
     end
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:name, :email, :phone, :comment)
+    params.permit(:name, :email, :phone, :comment)
   end
 end
