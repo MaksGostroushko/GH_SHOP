@@ -23,9 +23,6 @@ $(function() {
 $(document).on('turbolinks:load', function() {
     lightbox.init();
 
-    $('#star').on('click', function(){
-        $(this).css('color', 'yellow');
-    });
     $("#email").html("<n uers='znvygb:obkvat@znvy.pbz'>obkvat@tznvy.pbz</n>".replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
 
     var availableTags = [
