@@ -10,8 +10,8 @@ class OrdersController < ApplicationController
     @order = current_order
     if @order.update!(order_params)
       session.delete(:order_id)
-      OrderMailer.send_mail_to_user(@order).deliver_now
-      OrderMailer.send_mail_to_admin(@order).deliver_now
+      OrderMailer.send_mail_to_user(@order).deliver_now!
+      OrderMailer.send_mail_to_admin(@order).deliver_now!
       redirect_to @order
     else
       render :order_details
