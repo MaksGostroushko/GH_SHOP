@@ -4,9 +4,9 @@ class ProductsController < ApplicationController
   def index
     @categories = Category.all
     @products = Product.order(created_at: :desc)
-    @order_item = current_order.order_items.new
-    @products = @products.search(params[:search]).order(created_at: :desc)  if params[:search]
-    @products = @products.where(id: ProductCategory.where(category_id: params[:filter]).pluck(:product_id)) if params[:filter]
+    @order_item = current_order.order_items.build
+    @products = @products.search(params[:search]) if params[:search].present?
+    @products = @products.where(id: ProductCategory.where(category_id: params[:filter]).pluck(:product_id)) if params[:filter].present?
     @products = @products.where('price >= ?', params[:min_price]) if params[:min_price].present?
     @products = @products.where('price <= ?', params[:max_price]) if params[:max_price].present?
 
