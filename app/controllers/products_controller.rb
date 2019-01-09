@@ -2,14 +2,14 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [ :show, :edit, :update, :destroy ]
 
   def index
+    @categories = Category.all
     @products = Product.order(created_at: :desc)
+    @order_item = current_order.order_items.build
     @products = @products.search(params[:search]) if params[:search].present?
     @products = @products.where(id: ProductCategory.where(category_id: params[:filter]).pluck(:product_id)) if params[:filter].present?
     @products = @products.where('price >= ?', params[:min_price]) if params[:min_price].present?
     @products = @products.where('price <= ?', params[:max_price]) if params[:max_price].present?
     @products = Product.paginate(page: params[:page], per_page: 6)
-    @categories = Category.all
-    @order_item = current_order.order_items.build
 
     respond_to do |format|
       format.html
