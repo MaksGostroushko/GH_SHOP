@@ -4,10 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'bootstrap', '~> 4.1.3'
-gem 'bootstrap-will_paginate', '1.0.0'
+gem 'will_paginate-bootstrap'
 gem 'will_paginate', '3.1.6'
 gem 'jquery-rails'
-gem 'acts_as_list'
+# gem 'acts_as_list'
 gem 'carrierwave', '1.2.2'
 gem 'jquery-ui-rails'
 gem 'ancestry'

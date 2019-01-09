@@ -10,4 +10,4 @@
       </div>
     </div>
 
-    <%# will_paginate @products  %>
+      <span class="paginate_show"><%= will_paginate( @products, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer ) %></span>
