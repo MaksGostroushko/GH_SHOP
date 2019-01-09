@@ -2,4 +2,4 @@
 <div class="shopping-cart">
   <%= render "shopping_cart" %>
 </div>
-<%= link_to "Confirm", order_details_path, class: 'btn btn-success' if @order_items.present? %>
+<div class="text-center"><%= link_to "Confirm", order_details_path, class: 'btn btn-success' if @order_items.present? %></div>
