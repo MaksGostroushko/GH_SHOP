@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
 before_action :find_product
 
   def new
-    # @product = Product.find(params[:product_id])
     @comment = Comment.new
   end
 
@@ -12,7 +11,6 @@ before_action :find_product
       redirect_to @product
     else
       redirect_to @product
-      # flash[:danger] = "Sorry, problem"
     end
   end
 
