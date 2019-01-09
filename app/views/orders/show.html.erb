@@ -1,12 +1,25 @@
-Ok, we know who are you
-<%= @order.name %>
-<br>
-<%= @order.phone %>
-<br>
-<%= @order.email %>
-<br>
-<%= @order.comment %>
+<div class="row">
+  <div class="col-md-6 order_details_buyer">
+    <h5>Our consultant will call you</h5>
+    <!-- <br> -->
+    <p></p>name: <h3><%= @order.name %></h3>
+    <!-- <br> -->
+    phone: <h3><%= @order.phone %></h3>
+    <!-- <br> -->
+    email <h3><%= @order.email %></h3>
+    <!-- <br> -->
+    comment <h3><%= @order.comment %></h3>
+  </div>
 
-<% @order.products.each do |item| %>
-  <%= item.title %>
-<% end %>
+  <div class="col-md-6 order_details_item">
+    <h5>Your orders</h5>
+    <% @order.products.each do |item| %>
+      Title: <h3><%= item.title %></h3>
+      <%= image_tag item.pictures[0].url(:thumb) if item.pictures.present? %>
+      <p></p>Price: <h3><%= number_to_currency( item.price, precision: 0 ) %></h3>
+      Result: <h3><%= item.result %></h3>
+      Description: <h3><%= sanitize item.description %></h3>
+      <hr>
+    <% end %>
+  </div>
+</div>

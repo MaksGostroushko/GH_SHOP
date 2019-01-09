@@ -1,4 +1,8 @@
 <p>You order in progress</p>
 <% @order.products.each do |item| %>
   <%= item.title %>
+  <p></p>Price: <h3><%= number_to_currency( item.price, precision: 0 ) %></h3>
+  Result: <h3><%= item.result %></h3>
+  Description: <h3><%= sanitize item.description %></h3>
+  <hr>
 <% end %>

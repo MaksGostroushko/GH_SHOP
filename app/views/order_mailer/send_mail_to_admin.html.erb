@@ -1,12 +1,16 @@
 <p>New order</p>
-<%= @order.name %>
+Name: <%= @order.name %>
 <br>
-<%= @order.phone %>
+Phone: <%= @order.phone %>
 <br>
-<%= @order.email %>
+Email: <%= @order.email %>
 <br>
-<%= @order.comment %>
+Comment: <%= @order.comment %>
 <br>
 <% @order.products.each do |item| %>
   <%= item.title %>
+  <p></p>Price: <h3><%= number_to_currency( item.price, precision: 0 ) %></h3>
+  Result: <h3><%= item.result %></h3>
+  Description: <h3><%= sanitize item.description %></h3>
+  <hr>
 <% end %>
