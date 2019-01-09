@@ -1,26 +1,24 @@
 <% provide(:title, "Order details") %>
 <div class="orders_new">
   <%= form_with url: update_order_details_path, method: :patch, class: "form-group" do |f| %>
-    <%= f.label :name %>
+  <%= render 'shared/error_messages', object: f.object %>
 
+    <%= f.label :name %>
     <%= f.text_field :name, class:"form-control", required: true %>
 
     <br>
 
     <%= f.label :email %>
-
     <%= f.text_field :email, class:"form-control", required: true %>
 
     <br>
 
     <%= f.label :phone %>
-
     <%= f.text_field :phone, class:"form-control", required: true %>
 
     <br>
 
     <%= f.label :comment %>
-
     <%= f.text_area :comment, class:"form-control" %>
 
     <br>

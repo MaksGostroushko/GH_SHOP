@@ -3,7 +3,7 @@
   <ul class="category">
         <% @categories.each do |category| %>
         <li>
-          <%= check_box_tag "filter[]", category.id, params[:filter] ? params[:filter].include?(category.id.to_s) : false, id: "cb#{category.id}" %>
+          <%= check_box_tag "filter[]", category.id, params[:filter] ? params[:filter].include?(category.id.to_s) : false, id: "cb#{category.id}", remote: true %>
 
           <label for="cb<%= category.id %>"><%= category.name %></label>
 

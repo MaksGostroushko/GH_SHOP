@@ -9,10 +9,11 @@ class ProductsController < ApplicationController
     @products = @products.where(id: ProductCategory.where(category_id: params[:filter]).pluck(:product_id)) if params[:filter].present?
     @products = @products.where('price >= ?', params[:min_price]) if params[:min_price].present?
     @products = @products.where('price <= ?', params[:max_price]) if params[:max_price].present?
-    # @products = Product.paginate(page: params[:page], per_page: 6)
+    @products = Product.paginate(page: params[:page], per_page: 6).search(params[:search])
 
     respond_to do |format|
       format.html
+      format.js
       format.json { render json: @products.pluck(:title) }
     end
   end
