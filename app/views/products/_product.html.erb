@@ -1,13 +1,12 @@
 <article class="product">
   <div class="order">
-    <div class="head-order">
-      <section class="post-head">
+    <div class="head-order card">
+      <div class="post-head">
         <%= link_to (image_tag product.pictures[0].url(:thumb) if product.pictures.present?), product_path(product) %>
         <h2><%= sanitize link_to product.title, product_path(product) %></h2>
         <h2><%= number_to_currency( product.price, precision: 0 ) %></h2>
         <%= product.result %>
         <h5><%= sanitize(product.description.truncate(20, separator: '</p>')) %></h5>
-      </section>
   </div>
 
       <%= form_for @order_item do |f| %>
@@ -23,5 +22,6 @@
         <div class="div_published_false"><span class="span_published_false">Sorry,the boxer has a stomach ache</span></div>
         <% end %>
       <% end %>
+    </div>
     </div>
 </article>
