@@ -1,26 +1,18 @@
+  <% provide(:title, "#{@product.title}") %>
+  <div class="row content">
+    <%= render 'images' %>
 
-<!-- <div class="container"> -->
-<!-- </div> -->
-  <!-- <div class="row"> -->
-    <!-- <div class="row"> -->
-      <!-- <div class="images-block col-md-6"> -->
-      <div class="row content">
-        <%= render 'images' %>
-      <!-- </div> -->
-      <!-- <div class="show_product col-md-6"> -->
-      <div class="right">
-        <h1><%= sanitize @product.title %></h1>
-        <h2><%= number_to_currency( @product.price, precision: 0 ) %></h2>
-        <%= @product.result %><br>
-        <% if @avg_rating.present? %>
-        Average rating: <%= @avg_rating %>
-        <% end %>
-        <p><%= sanitize @product.description %></p>
-        </div>
+    <div class="right">
+      <h1><%= sanitize @product.title %></h1>
+      <h2><%= number_to_currency( @product.price, precision: 0 ) %></h2>
+      <%= @product.result %><br>
+      <% if @avg_rating.present? %>
+      Average rating: <%= @avg_rating %>
+      <% end %>
+      <p><%= sanitize @product.description %></p>
+    </div>
   </div>
 
-
-    <!-- </div> -->
     <% if @last_products.count > 1 %>
       <h3 class="text-center view_text"><b>Last viewed products</b></h3>
     <% end %>
@@ -28,19 +20,18 @@
     <br>
 
     <div class="row cards">
-  <% @last_products.each do |product| %>
-    <% if product != @product %>
-        <div class="card text-center" style="width: 20rem;">
-          <div class="card-body">
-            <%= link_to (image_tag product.pictures.first.url(:thumb)), product_path(product) if product.pictures.present? %>
-            <br><br>
-            <h5 class="card-title"><b><%= link_to product.title, product_path(product) %></b></h5>
-
-            <p class="card-text"><b><%= number_to_currency(product.price) %></b></p>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+      <% @last_products.each do |product| %>
+        <% if product != @product %>
+            <div class="card text-center" style="width: 20rem;">
+              <div class="card-body">
+                <%= link_to (image_tag product.pictures.first.url(:thumb)), product_path(product) if product.pictures.present? %>
+                <br><br>
+                <h5 class="card-title"><b><%= link_to product.title, product_path(product) %></b></h5>
+                <p class="card-text"><b><%= number_to_currency(product.price) %></b></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
   </div>
 
 
