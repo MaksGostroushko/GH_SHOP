@@ -16,7 +16,7 @@ class Product < ApplicationRecord
 
   mount_uploaders :pictures, PictureUploader
 
-  def search(search)
+  def self.search(search)
     where("title ILIKE ?", "%#{search}%")
   end
 
