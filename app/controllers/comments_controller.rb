@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 before_action :find_product
 
   def new
-    @comment = Comment.new
+    @comment = Comment.build
   end
 
   def create
@@ -28,6 +28,6 @@ before_action :find_product
   end
 
   def comment_params
-    params.require(:comment).permit(:body, :name, :rating)
+    params.require(:comment).permit(:body, :name, :rating, :status)
   end
 end

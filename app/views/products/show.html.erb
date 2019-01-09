@@ -5,11 +5,13 @@
     <div class="right">
       <h1><%= sanitize @product.title %></h1>
       <h2><%= number_to_currency( @product.price, precision: 0 ) %></h2>
-      <%= @product.result %><br>
-      <% if @avg_rating.present? %>
-      Average rating: <%= @avg_rating %>
+      <h3><%= @product.result %><br></h3>
+      <% if @avg_rating.present? && @avg_rating >= 0  %>
+       <h3>Average rating: <%= @avg_rating.round(1) %></h3>
+      <% elsif @avg_rating <= 0 %>
+        Average: 1
       <% end %>
-      <p><%= sanitize @product.description %></p>
+      <h4><p><%= sanitize @product.description %></p></h4>
     </div>
   </div>
 
