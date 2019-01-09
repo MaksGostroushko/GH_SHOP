@@ -11,7 +11,7 @@ gem 'acts_as_list'
 gem 'carrierwave', '1.2.2'
 gem 'jquery-ui-rails'
 gem 'ancestry'
-gem 'recaptcha', :require => 'recaptcha/rails'
+# gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'trix-rails', require: 'trix'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem "font-awesome-rails"
