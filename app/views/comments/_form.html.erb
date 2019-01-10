@@ -15,7 +15,7 @@
       <%= f.text_field :name, class: 'form-control comment_name' %>
       <p></p>
       <%= f.label :body, class: "comment_label_title" %>
-      <%= f.text_area :body, required: true, class: 'form-control btn-form comment_form' %>
+      <%= f.trix_editor :body, required: true, class: 'form-control btn-form comment_form' %>
 
       <p class="title_rating">Rating</p>
       <div class="rating">

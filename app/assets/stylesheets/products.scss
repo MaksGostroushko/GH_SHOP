@@ -5,6 +5,11 @@
   }
 }
 
+.card {
+  padding: 6px;
+}
+
+
 .post-head{
   text-align: center;
 }
@@ -49,6 +54,13 @@
     // margin-left: 25px;
     margin-top: 60px;
   }
+
+  .product:hover {
+    transform: scale(1.15);
+    padding: 15px;
+    padding-bottom: 45px;
+  }
+
 .show_product {
     text-align: center;
     margin-top: 50px;
