@@ -49,16 +49,16 @@
     margin: 5px;
     height: 20px;
     width: 30%;
-    margin-bottom: 280px;
+    margin-bottom: 320px;
     // margin-right: auto;
     // margin-left: 25px;
-    margin-top: 60px;
+    // margin-top: 60px;
   }
 
   .product:hover {
     transform: scale(1.15);
     padding: 15px;
-    padding-bottom: 55px;
+    padding-bottom: 65px;
   }
 
 .show_product {
@@ -103,4 +103,8 @@
 
   .cards {
     max-width: 100%;
+  }
+
+  .right {
+    text-align: center;
   }
