@@ -1,5 +1,5 @@
 <% provide(:title, "Your order") %>
-<div class="row">
+<div class="row show_cart_details">
   <div class="col-md-6 order_details_buyer">
     <h5>Our consultant will call you</h5>
     <!-- <br> -->
@@ -19,7 +19,7 @@
       <%= image_tag item.pictures[0].url(:thumb) if item.pictures.present? %>
       <p></p>Price: <h3><%= number_to_currency( item.price, precision: 0 ) %></h3>
       Result: <h3><%= item.result %></h3>
-      Description: <h3><%= sanitize item.description %></h3>
+      <!-- Description: <h3><%# sanitize item.description %></h3> -->
       <hr>
     <% end %>
   </div>
