@@ -1,10 +1,15 @@
 class OrderItemsController < ApplicationController
   def create
     @order = current_order
-    @order_item = @order.order_items.build(order_item_params)
-    @order.save!
-    flash[:success] = "Item added in cart"
-    session[:order_id] = @order.id
+    if @order_item = @order.order_items.find_by(product_id: params[:order_item][:product_id].to_i)
+      @order_item.quantity += params[:order_item][:quantity].present? ? params[:order_item][:quantity].to_i : 1
+      @order_item.save
+    else
+      @order_item = @order.order_items.build(order_item_params)
+      @order.save!
+      flash[:success] = "Item added in cart"
+      session[:order_id] = @order.id
+    end
     redirect_back(fallback_location: root_path)
   end
 

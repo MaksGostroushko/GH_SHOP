@@ -14,97 +14,81 @@
   text-align: center;
 }
 
-// .head-order {
-//   :hover  {
-//     background-color: #FDFEFE;
-//     border: 5px outset lightgray;
-//   }
-// }
-//
-// .head-order section, h2, h5 {
-//   :hover {
-//     border: 0px solid white !important;
-//   }
-// }
-
 .product_button{
   text-align: center;
 }
 
-   .product_title {
-     text-align: center;
-   }
+ .product_title {
+   text-align: center;
+ }
 
-  .product_grid {
-    // margin-left: 10px;
-    // padding: 50px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 70px;
-  }
+.product_grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 70px;
+}
 
-  .product {
-    margin: 5px;
-    height: 20px;
-    width: 30%;
-    margin-bottom: 320px;
-    // margin-right: auto;
-    // margin-left: 25px;
-    // margin-top: 60px;
-  }
+.product {
+  margin: 5px;
+  height: 20px;
+  width: 30%;
+  margin-bottom: 320px;
+}
 
-  .product:hover {
-    transform: scale(1.15);
-    padding: 15px;
-    padding-bottom: 65px;
+.product:hover {
+  transform: scale(1.15);
+  padding: 15px;
+  padding-bottom: 65px;
+  .span_published_false {
+    font-size: 14px;
   }
+}
 
 .show_product {
-    text-align: center;
-    margin-top: 50px;
-    margin-left: 100px
-  }
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 100px
+}
 
-  .product_image {
-    width: 300px;
-    height: 200px;
-  }
+.product_image {
+  width: 300px;
+  height: 200px;
+}
 
-  .div_published_false {
-    margin-top: 5px;
-    background-color: lightgray;
-    max-width: 300px;
-    height: 37px;
-    // border: 1px solid black;
-  }
+.div_published_false {
+  margin-top: 5px;
+  background-color: lightgray;
+  max-width: 300px;
+  height: 37px;
+}
 
-  .span_published_false {
-    margin-left: 10px;
-  }
+.span_published_false {
+  margin-left: 10px;
+}
 
-  .price {
-    margin-left: 15px;
-  }
+.price {
+  margin-left: 15px;
+}
 
-  ul.pagination {
-    margin-left: auto;
-    margin-right: auto;
-  }
+ul.pagination {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .p_description {
-    max-width: 550px;
-  }
+.p_description {
+  max-width: 550px;
+}
 
-  .content {
-    max-width: 100%;
-  }
+.content {
+  max-width: 100%;
+}
 
-  .cards {
-    max-width: 100%;
-  }
+.cards {
+  max-width: 100%;
+}
 
-  .right {
-    text-align: center;
-  }
+.right {
+  text-align: center;
+}

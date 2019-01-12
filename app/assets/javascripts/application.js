@@ -8,7 +8,6 @@
 //= require trix
 //= require bootstrap
 //= require turbolinks
-//= require comment
 //= require flash
 //= require rating
 //= require search
