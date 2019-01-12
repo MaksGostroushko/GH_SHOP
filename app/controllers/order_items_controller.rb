@@ -4,6 +4,7 @@ class OrderItemsController < ApplicationController
     if @order_item = @order.order_items.find_by(product_id: params[:order_item][:product_id].to_i)
       @order_item.quantity += params[:order_item][:quantity].present? ? params[:order_item][:quantity].to_i : 1
       @order_item.save
+      flash[:success] = "Quantity update"
     else
       @order_item = @order.order_items.build(order_item_params)
       @order.save!
