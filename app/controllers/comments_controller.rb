@@ -6,13 +6,13 @@ before_action :find_product
   end
 
   def create
-    @comment = @product.comments.create!(comment_params)
-    if verify_recaptcha(model: @comment) && @comment.save
+    if verify_recaptcha(model: @comment)
+      @comment = @product.comments.create!(comment_params)
       redirect_to @product
       flash[:success] = "Admin check your comment"
     else
       redirect_to @product
-      flash[:success] = "Admin check your comment"
+      flash[:danger] = "Please,confirm that you are not a robot"
     end
   end
 
