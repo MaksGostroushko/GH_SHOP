@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  before_action :find_product, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @categories = Category.all
@@ -28,6 +27,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
     @comments = @product.comments.where(status: true)
 
     if cookies[:products].present?
@@ -41,54 +41,10 @@ class ProductsController < ApplicationController
     @avg_rating = (total_rating.to_f / @comments.count.to_f)
   end
 
-  def new
-    @product = Product.new
-  end
-
-  def create
-    @product = Product.new(product_params)
-      if @product.save
-        flash[:success] = "Product created!"
-        redirect_to @product
-      else
-        flash[:danger] = "New product don't create"
-        render 'new'
-      end
-  end
-
-  def edit
-  end
-
-  def update
-      if @product.update_attributes(product_params)
-        flash[:success] = "Product was updated"
-        redirect_to @product
-      else
-        render 'edit'
-      end
-  end
-
-  def avg_rating
-    # @total_rating = 0
-    # @comments.each { |r| @total_rating += r.rating }
-
-    # total_rating = @comments.sum(:rating) if @comments.present?
-    # @avg_rating = (@total_rating.to_f / @comments.count.to_f)
-  end
-
-  def destroy
-    @product.destroy!
-    flash[:success] = "Product destroy"
-    redirect_to products_path
-  end
 
   private
 
   def product_params
     params.require(:product).permit(:title, :price, :result, :description, {pictures: []}, :published, :active)
-  end
-
-  def find_product
-    @product = Product.find(params[:id])
   end
 end

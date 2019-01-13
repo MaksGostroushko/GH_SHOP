@@ -16,13 +16,6 @@ before_action :find_product
     end
   end
 
-  def destroy
-    @comment = Comment.find(params[:id])
-    @comment.destroy!
-    flash[:danger] = "Comment delete"
-    redirect_back(fallback_location: root_path)
-  end
-
   private
 
   def find_product
