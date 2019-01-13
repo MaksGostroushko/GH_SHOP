@@ -12,7 +12,7 @@ before_action :find_product
       flash[:success] = "Admin check your comment"
     else
       redirect_to @product
-      flash[:danger] = "Please,confirm that you are not a robot"
+      # flash[:danger] = "Please,confirm that you are not a robot"
     end
   end
 
