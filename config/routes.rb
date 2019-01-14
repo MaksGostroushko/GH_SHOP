@@ -13,15 +13,7 @@ Rails.application.routes.draw do
   resources :order_items, only: [:create, :update, :destroy]
   resources :pages
 
-  # get 'confirm',  to: 'carts#confirm'
-
   resources :products do
     resources :comments
   end
 end
-
-  # get 'order_items/create'
-  # get 'order_items/update'
-  # get 'order_items/destroy'
-  # get 'carts/show'
-  # resources :products

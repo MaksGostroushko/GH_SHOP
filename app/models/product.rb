@@ -7,7 +7,6 @@ class Product < ApplicationRecord
   validates :title, presence: true, length: { minimum: 3, maximum: 50 }
   validates :result, presence: true
   validates :price, presence: true
-  # validates :pictures, presence: true
   validates :description, presence: true, length: { minimum: 10 }
 
   scope :published, -> { where(published: true) }
@@ -20,13 +19,9 @@ class Product < ApplicationRecord
     where("title ILIKE ?", "%#{search}%")
   end
 
-  # self.per_page = 10
   def to_param
-    "#{id}-#{title}"
+    "#{id}-#{title.parameterize.downcase}"
   end
-
-  # scope :published, -> { where(published: true) }
-
 
   private
 
