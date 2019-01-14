@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* active admin
 
-Things you may want to cover:
+* hide email
 
-* Ruby version
+* search autocomplete
 
-* System dependencies
+* image gallery
 
-* Configuration
+* cart
 
-* Database creation
+* mailers
 
-* Database initialization
+* categories
 
-* How to run the test suite
+* price filter
 
-* Services (job queues, cache servers, search engines, etc.)
+* last viewed products
 
-* Deployment instructions
-
-* ...
+* comments
