@@ -11,6 +11,7 @@
  *= require pages
  *= require project
  *= require orders
+ *= require active_admin/editor/wysiwyg
  */
  @import "bootstrap";
  @import 'lightbox';

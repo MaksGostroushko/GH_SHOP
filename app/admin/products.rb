@@ -8,8 +8,8 @@ permit_params :product, :of, :title, :result, :description, :price, :published, 
   form title: 'A custom title' do |f|
     inputs 'Details' do
       input :title
-      input :result
-      input :description
+      input :result, as: :html_editor
+      input :description, as: :html_editor
       input :price
       input :published
       input :categories, as: :check_boxes, collection: Category.all.map { |c| [c.name, c.id] }
